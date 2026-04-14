@@ -10,45 +10,16 @@
   "homepage": "https://github.com/renediana/medicina-interna-farreras",
   "license": "MIT",
   "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder",
-    "dist:linux": "electron-builder --linux deb",
-    "dist:zip": "electron-builder --linux zip"
-  },
-  "build": {
-    "appId": "com.renediana.medicinainterna",
-    "productName": "Medicina Interna Farreras",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "**/*",
-      "!dist",
-      "!node_modules/.cache",
-      "!*.log"
-    ],
-    "linux": {
-      "target": ["deb", "zip"],
-      "category": "Education",
-      "icon": "assets/icono.png",
-      "maintainer": "René Hernández Hernández <renediana2014@gmail.com>",
-      "desktop": {
-        "Name": "Medicina Interna Farreras",
-        "Comment": "Acceso rápido a los capítulos de Medicina Interna",
-        "Categories": "Education;Medicine;"
-      }
-    },
-    "win": {
-      "target": "zip",
-      "icon": "assets/icono.png"
-    },
-    "mac": {
-      "target": "zip",
-      "icon": "assets/icono.png"
-    }
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "devDependencies": {
-    "electron": "^28.2.0",
-    "electron-builder": "^24.13.3"
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "electron": "^28.2.0"
   }
 }
